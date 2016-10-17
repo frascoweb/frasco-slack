@@ -49,7 +49,7 @@ def create_blueprint(app):
         if len(r) > 0 and r[0][1]:
             data = r[0][1]
             if not isinstance(data, (str, unicode)):
-                return json.dumps(data)
+                return json.dumps(data), {"Content-Type": "application/json"}
             return data
         return ""
 
